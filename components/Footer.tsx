@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { siteConfig } from "@/lib/site"
 
 export function Footer() {
@@ -7,12 +8,12 @@ export function Footer() {
         <p className="text-sm text-zinc-500 dark:text-zinc-500">
           © {new Date().getFullYear()} {siteConfig.name}.
         </p>
-        <a
-          href="#inicio"
+        <Link
+          href="/#inicio"
           className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
         >
           Volver arriba
-        </a>
+        </Link>
       </div>
     </footer>
   )

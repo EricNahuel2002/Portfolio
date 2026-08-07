@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { navItems, siteConfig } from "@/lib/site"
 import { ThemeToggle } from "@/components/ThemeToggle"
 
@@ -13,23 +14,23 @@ export function Navbar() {
         aria-label="Navegación principal"
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
       >
-        <a
-          href="#inicio"
+        <Link
+          href="/#inicio"
           className="text-lg font-bold tracking-tight text-zinc-900 dark:text-white"
         >
           {siteConfig.initials}
           <span className="text-indigo-500 dark:text-indigo-400">.</span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a
+              <Link
                 href={item.href}
                 className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -80,13 +81,13 @@ export function Navbar() {
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className="block rounded-md px-3 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="mt-2">

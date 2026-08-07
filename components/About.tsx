@@ -6,7 +6,7 @@ const skills = [
   "TypeScript",
   "JavaScript",
   "Java",
-  "ASP NET CORE",
+  ".NET C#",
   "Tailwind CSS",
   "MySQL",
   "Git",
@@ -16,27 +16,7 @@ export function About() {
   return (
     <section id="sobre-mi" className="scroll-mt-20 py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative mx-auto w-full max-w-sm">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 blur-2xl dark:from-indigo-500/30 dark:to-violet-500/30"
-            />
-            {siteConfig.photo ? (
-              <img
-                src={siteConfig.photo}
-                alt={`Foto de ${siteConfig.name}`}
-                className="relative aspect-square w-full rounded-3xl border border-zinc-200 object-cover dark:border-white/10"
-              />
-            ) : (
-              <div className="relative flex aspect-square items-center justify-center rounded-3xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 dark:border-white/10 dark:from-zinc-800 dark:to-zinc-900">
-                <span className="text-6xl font-bold text-zinc-900/10 dark:text-white/10">
-                  {siteConfig.initials}
-                </span>
-              </div>
-            )}
-          </div>
-
+        <div className="max-w-3xl">
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400">
               Sobre mí
@@ -68,8 +48,6 @@ export function About() {
                 ))}
               </ul>
             </div>
-
-
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Link from "next/link"
+import Image from "next/image"
 import { projects } from "@/data/projects"
 
 const featured = projects.find((project) => project.featured)
@@ -22,25 +24,14 @@ export function Projects() {
 
         {featured && (
           <article className="group mt-12 overflow-hidden rounded-2xl border border-indigo-500/30 bg-white shadow-lg shadow-indigo-500/5 transition-colors hover:border-indigo-500/60 dark:border-indigo-400/20 dark:bg-zinc-900/60 dark:shadow-none dark:hover:border-indigo-400/40 lg:grid lg:grid-cols-2">
-            <div className="relative">
-              <div
-                className={`flex aspect-video h-full items-center justify-center bg-gradient-to-br ${featured.gradient}`}
-              >
-                <svg
-                  className="h-14 w-14 text-white/80 transition-transform group-hover:scale-110"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A1.5 1.5 0 0021.75 19.5V4.5A1.5 1.5 0 0020.25 3H3.75A1.5 1.5 0 002.25 4.5v15A1.5 1.5 0 003.75 21z"
-                  />
-                </svg>
-              </div>
+            <div className="relative aspect-video h-full w-full">
+              <Image
+                src="/images/Homefix.jpeg"
+                alt={`Captura de ${featured.title}`}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
               <span className="absolute left-4 top-4 rounded-full bg-indigo-500 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
                 Destacado
               </span>
@@ -64,6 +55,14 @@ export function Projects() {
                 ))}
               </ul>
               <div className="mt-6 flex flex-wrap items-center gap-4 text-sm">
+                {featured.slug && (
+                  <Link
+                    href={`/proyectos/${featured.slug}`}
+                    className="rounded-full bg-indigo-500 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-indigo-400"
+                  >
+                    Ver detalle
+                  </Link>
+                )}
                 {featured.link && (
                   <a
                     href={featured.link}
@@ -144,7 +143,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                    className="rounded-full bg-indigo-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-indigo-400"
                   >
                     Código
                   </a>
