@@ -49,9 +49,9 @@ export function CaseStudyPage({
               Volver a proyectos
             </Link>
 
-            <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-start">
               {caseStudy.screenshots[0] && (
-                <div className="relative">
+                <div className={`relative ${showBadge ? "lg:pt-10" : ""}`}>
                   <div
                     aria-hidden="true"
                     className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 blur-2xl dark:from-indigo-500/30 dark:to-violet-500/30"
