@@ -92,24 +92,36 @@ export function Projects() {
               key={project.title}
               className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors hover:border-indigo-400/60 dark:border-white/10 dark:bg-zinc-900/60 dark:hover:border-indigo-400/40"
             >
-              <div
-                className={`flex aspect-video items-center justify-center bg-gradient-to-br ${project.gradient}`}
-              >
-                <svg
-                  className="h-10 w-10 text-white/80 transition-transform group-hover:scale-110"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A1.5 1.5 0 0021.75 19.5V4.5A1.5 1.5 0 0020.25 3H3.75A1.5 1.5 0 002.25 4.5v15A1.5 1.5 0 003.75 21z"
+              {project.image ? (
+                <div className="relative aspect-video h-full w-full">
+                  <Image
+                    src={project.image}
+                    alt={`Captura de ${project.title}`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                </svg>
-              </div>
+                </div>
+              ) : (
+                <div
+                  className={`flex aspect-video items-center justify-center bg-gradient-to-br ${project.gradient}`}
+                >
+                  <svg
+                    className="h-10 w-10 text-white/80 transition-transform group-hover:scale-110"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A1.5 1.5 0 0021.75 19.5V4.5A1.5 1.5 0 0020.25 3H3.75A1.5 1.5 0 002.25 4.5v15A1.5 1.5 0 003.75 21z"
+                    />
+                  </svg>
+                </div>
+              )}
 
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
@@ -128,7 +140,15 @@ export function Projects() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-5 flex items-center gap-4 text-sm">
+                <div className="mt-5 flex flex-wrap items-center gap-4 text-sm">
+                  {project.slug && (
+                    <Link
+                      href={`/proyectos/${project.slug}`}
+                      className="font-semibold text-indigo-600 transition-colors hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+                    >
+                      Ver detalle
+                    </Link>
+                  )}
                   {project.link && (
                     <a
                       href={project.link}

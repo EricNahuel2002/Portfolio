@@ -20,6 +20,7 @@ export type Project = {
   link?: string
   github: string
   gradient: string
+  image?: string
   featured?: boolean
   slug?: string
   caseStudy?: CaseStudy
@@ -122,9 +123,101 @@ export const projects: Project[] = [
     title: "Adivina la palabra",
     description:
       "Juego multijugador de adivinar la palabra con sincronización en tiempo real entre jugadores mediante WebSocket, lógica de rondas, sistema de puntaje y animaciones visuales.",
-    stack: ["Java", "Spring", "WebSocket", "Thymeleaf", "MySQL"],
+    stack: [
+      "Java 11",
+      "Spring MVC 5",
+      "Thymeleaf",
+      "Hibernate",
+      "WebSocket + STOMP",
+      "MySQL",
+      "Google Gemini",
+      "Mercado Pago",
+      "Bootstrap 5",
+      "Docker",
+      "GitHub Actions",
+    ],
     github: "https://github.com/EricNahuel2002/proyecto-adivina-la-palabra",
     gradient: "from-emerald-500 to-teal-500",
+    image: "/images/adivina-palabra-portada.png",
+    slug: "adivina-la-palabra",
+    caseStudy: {
+      tagline:
+        "Juego web multijugador en tiempo real de adivinar palabras por definición, con salas configurables, comodines y un bot con IA.",
+      overview:
+        "Adivina la palabra es un juego web multijugador de adivinar palabras por definición, desarrollado como trabajo universitario en el que los jugadores crean salas configurables (idioma, cantidad de rondas, jugadores y comodines), entran a una sala de espera con estado 'listo' y en cada ronda de 60 segundos reciben una definición y deben escribir la palabra correcta. El juego es en tiempo real: los aciertos, el ranking y el chat se sincronizan entre todos los jugadores.",
+      highlights: [
+        {
+          title: "Multijugador en tiempo real",
+          description:
+            "Chat, ranking en vivo, sala de espera sincronizada, expulsión de jugadores y cuenta regresiva entre rondas, todo con WebSockets/STOMP.",
+        },
+        {
+          title: "Bot con IA (Google Gemini)",
+          description:
+            "El bot recibe la definición, la procesa con Gemini 2.5 y responde intentos como un jugador humano más dentro de la partida.",
+        },
+        {
+          title: "Palabras dinámicas reales",
+          description:
+            "Las palabras y definiciones se obtienen de la API de la RAE (español) y Wikidata (inglés), no de listas estáticas.",
+        },
+        {
+          title: "Economía con pagos reales",
+          description:
+            "Monedas que se gastan en comodines (75 revelar letra, 100 bloquear rival 10s), comprables con Mercado Pago en sandbox + webhook.",
+        },
+        
+      ],
+      architecture: {
+        intro:
+          "Aplicación Java con patrón Spring MVC + Thymeleaf organizada en capas: config, presentación, dominio, infraestructura y helpers para integraciones externas. El flujo de rondas se controla con un scheduler (RondaTimerManager) que fuerza el fin de ronda a los 60s, y la sincronización en tiempo real usa Spring WebSocket + STOMP.",
+        layers: [
+          {
+            name: "config/",
+            description:
+              "Configuración Spring: MVC + Thymeleaf, Hibernate (MySQL), WebSocket/STOMP, interceptores de sesión/auth y executor de rondas.",
+          },
+          {
+            name: "presentacion/",
+            description:
+              "Controllers MVC + handlers WebSocket (Login, Registro, Lobby, SalaDeEspera, Juego, Market, Perfil, Ranking, VistaFinal).",
+          },
+          {
+            name: "dominio/",
+            description:
+              "Núcleo de negocio: entidades JPA (Usuario, Partida, Ronda, Palabra, Acierto...), DTOs, enums de estados, excepciones, interfaces de servicio y repositorio, y el RondaTimerManager.",
+          },
+          {
+            name: "infraestructura/",
+            description:
+              "Implementaciones de repositorios (Hibernate DAOs).",
+          },
+          {
+            name: "helpers/",
+            description:
+              "Integraciones externas: API RAE, Wikidata y Mercado Pago.",
+          },
+        ],
+        frontend:
+          "Bootstrap 5 (webjars) con CSS propio y JavaScript con cliente StompJs para la sala de espera y el juego. Vistas Thymeleaf (15 pantallas) en WEB-INF/views/thymeleaf y recursos estáticos en resources/core.",
+      },
+      features: [
+        "Lobby de partidas: crear sala configurable (idioma español/inglés, nº rondas, min/max jugadores, comodines, bot), unirse a sala o partida aleatoria.",
+        "Sala de espera en tiempo real: estado 'listo', chat, expulsión por el creador y validación de mínimos para iniciar.",
+        "Rondas multijugador en vivo: definición + temporizador de 60s, aciertos publicados en tiempo real, avance/cierres automáticos y puntaje por acierto.",
+        "Comodines con costo de monedas: revelar letra (75) y bloquear a un oponente 10 segundos (100).",
+        "Bot rival con IA Gemini que juega dentro de la partida.",
+        "Monedas y tienda con pagos Mercado Pago (sandbox) y ranking global histórico.",
+      ],
+      quality: [
+        "Testing multicapa: servicios (JUnit 5 + Mockito + Hamcrest), repositorios con HSQLDB/TestConfig (Hibernate real en memoria) y controllers.",
+        "E2E WebSocket: SalaDeEsperaControllerE2ETest conecta clientes STOMP reales (Tyrus) contra ws://localhost:8080 verificando flujos de sala (listo, expulsión, inicio de partida).",
+        "JavaScript con Jasmine (main.test.js, npm test); Playwright y Selenium declarados para E2E de vistas.",
+        "CI/CD con GitHub Actions: ejecuta mvn clean test en cada push/PR a main.",
+        "Deploy: WAR con Maven e imágenes Docker para Jetty y Tomcat + contenedor MySQL; dev local con mvn jetty:run → http://localhost:8080/spring.",
+      ],
+      screenshots: ["/images/adivina-palabra-portada.png","/images/adivina-palabra-1.png" ,"/images/adivina-palabra-2.png", "/images/adivina-palabra-3.png","/images/adivina-palabra-4.png"],
+    },
   },
   {
     title: "App-pedidos",
