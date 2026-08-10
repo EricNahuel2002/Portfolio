@@ -116,7 +116,16 @@ export const projects: Project[] = [
         "CI/CD con GitHub Actions (3 jobs: lint, build, test) con MySQL en contenedor.",
         "Producción: backend en Railway, frontend en Vercel y base de datos en Aiven con MySQL 8.",
       ],
-      screenshots: ["/images/Homefix.jpeg"],
+      screenshots: [
+        "/images/homefix/Homefix.jpeg",
+        "/images/homefix/landing-cliente.png",
+        "/images/homefix/inicio-cliente.png",
+        "/images/homefix/publicacion_ia.png",
+        "/images/homefix/detalle-publicacion-cliente.png",
+        "/images/homefix/inicio-worker.png",
+        "/images/homefix/detalle_postulacion-worker.png",
+        "/images/homefix/mi_agenda.png",
+      ],
     },
   },
   {
@@ -138,7 +147,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/EricNahuel2002/proyecto-adivina-la-palabra",
     gradient: "from-emerald-500 to-teal-500",
-    image: "/images/adivina-palabra-portada.png",
+    image: "/images/adivina-palabra/adivina-palabra-portada.png",
     slug: "adivina-la-palabra",
     caseStudy: {
       tagline:
@@ -216,7 +225,7 @@ export const projects: Project[] = [
         "CI/CD con GitHub Actions: ejecuta mvn clean test en cada push/PR a main.",
         "Deploy: WAR con Maven e imágenes Docker para Jetty y Tomcat + contenedor MySQL; dev local con mvn jetty:run → http://localhost:8080/spring.",
       ],
-      screenshots: ["/images/adivina-palabra-portada.png","/images/adivina-palabra-1.png" ,"/images/adivina-palabra-2.png", "/images/adivina-palabra-3.png","/images/adivina-palabra-4.png"],
+      screenshots: ["/images/adivina-palabra/adivina-palabra-portada.png","/images/adivina-palabra/adivina-palabra-1.png" ,"/images/adivina-palabra/adivina-palabra-2.png", "/images/adivina-palabra/adivina-palabra-3.png","/images/adivina-palabra/adivina-palabra-4.png"],
     },
   },
   {

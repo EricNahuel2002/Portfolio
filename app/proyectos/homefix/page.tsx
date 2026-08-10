@@ -20,5 +20,5 @@ const project = projects.find((p) => p.slug === "homefix");
 export default function ProjectPage() {
   if (!project?.caseStudy) return null;
 
-  return <CaseStudyPage project={project} />;
+  return <CaseStudyPage project={project} galleryVariant="carousel" />;
 }

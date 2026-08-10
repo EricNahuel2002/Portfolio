@@ -26,7 +26,7 @@ export function Projects() {
           <article className="group mt-12 overflow-hidden rounded-2xl border border-indigo-500/30 bg-white shadow-lg shadow-indigo-500/5 transition-colors hover:border-indigo-500/60 dark:border-indigo-400/20 dark:bg-zinc-900/60 dark:shadow-none dark:hover:border-indigo-400/40 lg:grid lg:grid-cols-2">
             <div className="relative aspect-video h-full w-full">
               <Image
-                src="/images/Homefix.jpeg"
+                src="/images/homefix/Homefix.jpeg"
                 alt={`Captura de ${featured.title}`}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"

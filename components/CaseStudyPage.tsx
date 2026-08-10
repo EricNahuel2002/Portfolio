@@ -1,17 +1,23 @@
 import Image from "next/image"
 import Link from "next/link"
-import type { ReactNode } from "react"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
+import { Carousel } from "@/components/Carousel"
 import type { Project } from "@/data/projects"
 
 type CaseStudyPageProps = {
   project: Project
   showBadge?: boolean
-  gallery?: ReactNode
+  galleryVariant?: "stack" | "carousel"
+  galleryTitle?: string
 }
 
-export function CaseStudyPage({ project, showBadge = true, gallery }: CaseStudyPageProps) {
+export function CaseStudyPage({
+  project,
+  showBadge = true,
+  galleryVariant = "stack",
+  galleryTitle = "Imágenes del proyecto",
+}: CaseStudyPageProps) {
   const { caseStudy } = project
 
   if (!caseStudy) return null
@@ -101,7 +107,13 @@ export function CaseStudyPage({ project, showBadge = true, gallery }: CaseStudyP
             </div>
 
             {caseStudy.screenshots.length > 1 &&
-              (gallery ?? (
+              (galleryVariant === "carousel" ? (
+                <Carousel
+                  images={caseStudy.screenshots.slice(1)}
+                  title={galleryTitle}
+                  alt={`Captura de ${project.title}`}
+                />
+              ) : (
                 <div className="mx-auto mt-14 grid max-w-4xl gap-6">
                   {caseStudy.screenshots.slice(1).map((src) => (
                     <Image
