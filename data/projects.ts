@@ -226,12 +226,103 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "App-pedidos",
+    title: "ServiceDesk",
     description:
-      "Plataforma de delivery tipo Rappi con patrón de API Gateway y microservicios en C#/.NET (autenticación, menú, pedidos) y frontend en Angular.",
-    stack: ["C#", ".NET", "Angular", "API Gateway", "Microservicios"],
-    github: "https://github.com/EricNahuel2002/app-pedidos",
-    gradient: "from-amber-500 to-orange-500",
+      "Plataforma SaaS de gestión de incidencias y soporte técnico para empresas que combina aprendizaje con implementación de calidad profesional, aplicando Clean Architecture, .NET y Azure.",
+    stack: [".NET 9", "C#", "Entity Framework Core", "SQL Server", "Azure", "React 19", "TypeScript", "Vite", "Tailwind CSS", "GitHub Actions", "SignalR"],
+    github: "https://github.com/EricNahuel2002/ServiceDesk",
+    gradient: "from-purple-500 to-pink-500",
+    image: "/images/service-desk/logotipo.jpg",
+    slug: "ServiceDesk",
+    caseStudy: {
+      tagline:
+        "Plataforma SaaS de gestión de incidencias y soporte técnico",
+      overview:
+        "Desarrollo de una plataforma SaaS de gestión de incidencias y soporte técnico que combina aprendizaje con una implementación de calidad profesional, aplicando Clean Architecture, .NET y Azure.",
+      highlights: [
+        {
+          title: "SLAs y prioridades",
+          description:
+            "Sistema de gestión de prioridades y acuerdos de nivel de servicio (SLAs) para garantizar tiempos de respuesta y resolución adecuados según la criticidad de las incidencias.",
+        },
+        {
+          title: "Panel de control con métricas",
+          description:
+            "Panel con estadísticas y métricas de incidencias para el administrador, incluyendo gráficos de tickets resueltos, promedio de tiempos de resolución, entre otros con el fin de medir el rendimiento de los técnicos de la empresa.",
+        },
+        {
+          title: "Notificaciones via mail",
+          description:
+            "Sistema de correo electrónico para notificaciones de estado de incidencias y asignaciones para técnicos, clientes y administradores.",
+        },
+        {
+          title: "Roles y permisos",
+          description:
+            "Sistema de roles y permisos con políticas para controlar el acceso a funcionalidades y datos según el rol del usuario.",
+        },
+        {
+          title: "Auditorías",
+          description:
+            "Registro detallado de todas las actividades llevadas a cabo en los tickets asignados a técnicos como cambios de estado, asignaciones, historial de chat y comentarios.",
+        },
+        {
+          title: "Sistema de denuncias y reapertura de tickets",
+          description:
+            "Funcionalidad para que los usuarios puedan denunciar malas conductas, dejar comentarios sobre su experiencia con el técnico asignado y solicitar la reapertura de tickets cerrados.",
+        }
+      ],
+      architecture: {
+        intro:
+          "Clean Architecture con separación en capas Domain, Application, Infrastructure y API, manteniendo la lógica de negocio independiente de Azure.",
+        layers: [
+          {
+            name: "Domain",
+            description:
+              "Capa fundamental con entidades de negocio, value objects y enumeraciones. No tiene dependencias externas y contiene la lógica de negocio pura.",
+          },
+          {
+            name: "Application",
+            description:
+              "Capa de casos de uso que orquesta la lógica de aplicación, maneja DTOs, validación de entradas y expone la funcionalidad a la API a través de Features y comandos/queries.",
+          },
+          {
+            name: "Infrastructure",
+            description:
+              "Implementa abstracciones para interactuar con recursos externos: Entity Framework Core para persistencia SQL Server, Azure services (Blob Storage, Queue Storage, Key Vault), y otros adaptadores.",
+          },
+          {
+            name: "API",
+            description:
+              "Capa de presentación que expone endpoints RESTful, maneja autenticación JWT, políticas de autorización y coordina la ejecución de casos de uso Application.",
+          },
+        ],
+        frontend:
+          "React 19 con TypeScript, TanStack Router/Query y Tailwind CSS.",
+      },
+      features: [
+        "Gestión completa de incidencias (crear, leer, actualizar, asignar, cerrar)",
+        "Sistema de roles y permisos con políticas JWT",
+        "Notificaciones via mail: Sistema de correo electrónico para notificaciones de estado de incidencias y asignaciones",
+        "Panel de control con métricas y estadísticas",
+        "Búsqueda y filtrado avanzado de incidencias",
+        "Integración con Azure Services (SQL Database, App Service, Blob Storage, Key Vault, Queue Storage, Functions, Application Insights)",
+        "Despliegue automático con GitHub Actions",
+      ],
+      quality: [
+        "Testing: xUnit para tests de unidad, cobertura en funcionalidades relevantes",
+        "CI/CD: GitHub Actions que construye y prueba tanto backend como frontend",
+        "Backend: Despliegue a Azure App Service con configuración Release/Any CPU",
+        "Frontend: Despliegue en Vercel usando Vite/build TypeScript",
+        "Servicios Azure: Application Insights para monitoreo, Azure Key Vault para secretos, Azure SQL Database con migraciones EF Core, Azure Blob Storage para archivos, Azure Queue Storage para procesamiento en segundo plano",
+      ],
+      screenshots: [
+        "/images/service-desk/logotipo.jpg",
+        "/images/service-desk/metricas.png",
+        "/images/service-desk/auditorias.png",
+        "/images/service-desk/detalle-ticket.png",
+        "/images/service-desk/cliente.png",
+      ],
+    },
   },
   {
     title: "Sistema de reserva de turnos",
