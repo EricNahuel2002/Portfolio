@@ -43,21 +43,6 @@ export const projects: Project[] = [
         "HomeFix es un proyecto final de carrera realizado con tecnologías frontend con React + Vite y backend con Node.js + Express + Prisma + MySQL, con toda la UI en español para el mercado argentino. Un proyecto de alta complejidad que integra autenticación con Auth0, verificación de identidad KYC (Didit), asistente con IA generativa (Gemini), notificaciones en tiempo real por Telegram, sistema de licitaciones, subcontratación y reseñas bidireccionales.",
       highlights: [
         {
-          title: "Arquitectura limpia",
-          description:
-            "Backend con capas estrictas tipo Domain Driven Design (presentation/domain/infrastructure), dependencia invertida: los servicios de dominio nunca tocan el ORM.",
-        },
-        {
-          title: "Asistente con IA (Gemini)",
-          description:
-            "Chat que diagnostica el problema del cliente, recomienda categoría y autogenera el borrador del post, devolviendo JSON estructurado.",
-        },
-        {
-          title: "KYC con Didit",
-          description:
-            "Verificación de identidad con webhooks firmados, mapeo de estados y polling de decisión.",
-        },
-        {
           title: "Búsqueda por distancia y emergencias",
           description:
             "Radio en km, filtros por categoría y paginación. Publicaciones de emergencia que expiran a las 24h y se difunden por Telegram.",
@@ -66,6 +51,16 @@ export const projects: Project[] = [
           title: "Licitaciones y subcontratos",
           description:
             "Licitaciones con ponderaciones de criterios y presupuesto máximo. Subcontratos con múltiples puestos agrupados por rubro.",
+        },
+        {
+          title: "Asistente con IA (Gemini)",
+          description:
+            "Chat que diagnostica el problema del cliente, recomienda categoría y autogenera el borrador del post",
+        },
+        {
+          title: "KYC con Didit",
+          description:
+            "Verificación de identidad con Didit (foto del DNI y selfie) para trabajadores y con validación de documentos.",
         },
         {
           title: "Reseñas bidireccionales",

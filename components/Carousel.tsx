@@ -33,13 +33,13 @@ export function Carousel({ images, title, alt }: CarouselProps) {
           >
             {images.map((src, index) => (
               <div key={src} className="w-full shrink-0">
-                <Image
-                  src={src}
-                  alt={`${alt} ${index + 1}`}
-                  width={1536}
-                  height={1024}
-                  className="aspect-video w-full object-cover"
-                />
+<Image
+  src={src}
+  alt={`${alt} ${index + 1}`}
+  width={1536}
+  height={1024}
+  className="aspect-video w-full object-contain"
+/>
               </div>
             ))}
           </div>
