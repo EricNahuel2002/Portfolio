@@ -186,7 +186,7 @@ export const projects: Project[] = [
           {
             name: "Infrastructure",
             description:
-              "Implementa abstracciones para interactuar con recursos externos: Entity Framework Core para persistencia SQL Server, Azure services (Blob Storage, Queue Storage, Key Vault), y otros adaptadores.",
+              "Implementa abstracciones para interactuar con recursos externos: Entity Framework Core para persistencia SQL Server, Azure services (App Service, Azure Functions, Blob Storage, Queue Storage, Key Vault), y otros adaptadores.",
           },
           {
             name: "API",
