@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     title: "HomeFix",
     description:
-      "Aplicación web full stack para servicios del hogar, con frontend React + Vite y backend Node.js + Express + Prisma + MySQL, subida de imágenes a Cloudinary y autenticación JWT.",
+      "Aplicación que conecta clientes con profesionales del hogar en pocos pasos, con publicaciones inteligentes y postulaciones y contrataciones ágiles.",
     stack: ["React", "Vite", "Node.js", "Express", "Prisma", "MySQL"],
     github: "https://github.com/CasanovaRamiro/HomeFix",
     gradient: "from-indigo-500 to-violet-500",
@@ -38,9 +38,10 @@ export const projects: Project[] = [
     slug: "homefix",
     caseStudy: {
       tagline:
-        "Plataforma full-stack que conecta clientes con profesionales de oficios del hogar.",
+        "Plataforma que conecta clientes con profesionales de oficios del hogar.",
       overview:
-        "HomeFix es un proyecto final de carrera realizado con tecnologías frontend con React + Vite y backend con Node.js + Express + Prisma + MySQL, con toda la UI en español para el mercado argentino. Un proyecto de alta complejidad que integra autenticación con Auth0, verificación de identidad KYC (Didit), asistente con IA generativa (Gemini), notificaciones en tiempo real por Telegram, sistema de licitaciones, subcontratación y reseñas bidireccionales.",
+        "HomeFix es una plataforma que conecta clientes con profesionales del hogar en pocos pasos, facilitando la publicación de trabajos, la postulación de trabajadores y el proceso de contratación. Integra un asistente de IA para ayudar en la creación de avisos, además de incorporar sistemas de licitaciones, subcontrataciones, reseñas bidireccionales y emergencias."
+        ,
       highlights: [
         {
           title: "Búsqueda por distancia y emergencias",
