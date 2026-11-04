@@ -22,13 +22,13 @@ export function About() {
               Sobre mí
             </h2>
             <p className="mt-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-              Transformo ideas en productos digitales
+              Del caos de una idea a la precisión de un producto
             </p>
             <p className="mt-6 leading-relaxed text-zinc-600 dark:text-zinc-400">
-              Soy un {siteConfig.role.toLowerCase()} recientemente graduado de la Tecnicatura Universitaria en Desarrollo Web en la Universidad Nacional de La Matanza. Me muevo con facilidad entre tecnologías modernas tales como React, Node.js, TypeScript, asi como también .NET C# y Java, sin una preferencia específica.
+              Soy un {siteConfig.role.toLowerCase()} recientemente graduado de la Tecnicatura Universitaria en Desarrollo Web en la Universidad Nacional de La Matanza. Cuento con alrededor de 2 años de experiencia profesional y académica en los que desarrollé aplicaciones complejas para clientes. Logro integrar mis conocimientos con tecnologías modernas tales como React, Node.js, TypeScript, asi como también .NET C# y Java.
             </p>
             <p className="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
-              Durante la carrera, colaboré con equipos en diseño,
+              Durante la carrera y mi vida como profesional, colaboré con equipos en diseño,
               desarrollo, testing y mantenimiento de proyectos. Me encanta aprender
               tecnologías nuevas y aplicarlas para resolver problemas reales.
             </p>

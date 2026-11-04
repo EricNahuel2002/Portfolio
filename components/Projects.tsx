@@ -17,7 +17,7 @@ export function Projects() {
             Trabajos destacados
           </p>
           <p className="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Una selección de proyectos donde aplico buenas prácticas de
+            Una selección de proyectos profesionales y propios donde aplico buenas prácticas de
             arquitectura, rendimiento y experiencia de usuario.
           </p>
         </div>
